@@ -32,7 +32,7 @@ public struct AWSSignatureV4 {
     var amzDate: String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-        dateFormatter.dateFormat = "YYYYMMdd'T'HHmmss'Z'"
+        dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss'Z'"
         return dateFormatter.string(from: unitTestDate ?? Date())
     }
 
@@ -108,7 +108,7 @@ public struct AWSSignatureV4 {
     func dateStamp() -> String {
         let date = unitTestDate ?? Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYYMMdd"
+        dateFormatter.dateFormat = "yyyyMMdd"
         return dateFormatter.string(from: date)
     }
 }
